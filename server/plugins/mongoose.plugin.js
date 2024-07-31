@@ -47,10 +47,10 @@ exports.plugin = {
         const saltRounds = 10;
         bcrypt.hash('Admin@123', saltRounds, async (err, hash) => {
           await UserModel.create({
-            firstName: 'Brijesh',
-            lastName: 'Lakhani',
-            email: 'lakhani@mail.io',
-            userName: 'Mr_lakhani',
+            firstName: 'super',
+            lastName: 'admin',
+            email: 'admin@mail.io',
+            userName: 'super_admin',
             userId: 'DSC00000001',
             address1: ' ',
             address2: ' ',
