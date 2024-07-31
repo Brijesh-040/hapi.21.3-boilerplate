@@ -470,7 +470,7 @@ const deleteFolder = async (path, bucket = 'public_bucket') => {
         const data = await s3.send(listCommand);
 
         let deleteParams = {
-          Bucket: 'mkst-uploads',
+          Bucket: config.connections.aws.ses[bucket],
           Delete: { Objects: [] },
         };
 
@@ -508,7 +508,7 @@ const deleteMultipleFile = async _key => {
     try {
       // List objects in the bucket with the given prefix
       const listParams = {
-        Bucket: 'mkst-uploads',
+        Bucket: config.connections.aws.ses.public_bucket,
         Prefix: _key,
       };
       const listCommand = new ListObjectsV2Command(listParams);
@@ -517,7 +517,7 @@ const deleteMultipleFile = async _key => {
       // If there are objects to delete, prepare the delete parameters
       if (res && res.Contents && res.Contents.length) {
         const deleteParams = {
-          Bucket: 'mkst-uploads',
+          Bucket: config.connections.aws.ses.public_bucket,
           Delete: { Objects: res.Contents.map(({ Key }) => ({ Key })) }
         };
         const deleteCommand = new DeleteObjectsCommand(deleteParams);

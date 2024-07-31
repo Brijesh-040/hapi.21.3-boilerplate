@@ -28,8 +28,13 @@
   },
   "keywords": [
     "DSC",
-    "schools",
-    "students"
+    "hapi",
+    "hapipal",
+    "hapi 21",
+    "hapi 21.3.10",
+    "hapi-boilerplate",
+    "boilerplate",
+    "node 20.16.0"
   ],
   "author": "Brijesh Lakhani <lakhani.brijesh376@gmail.com>",
   "license": "ISC",
